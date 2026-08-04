@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #fbf6ec;
+  --color-paper-dim: #f2ead9;
+  --color-ink: #1c2420;
+  --color-teal: #123832;
+  --color-teal-deep: #0b2622;
+  --color-marigold: #e8a33d;
+  --color-marigold-soft: #f2c37f;
+  --color-road: #c1440e;
+  --color-mist: #cfe0d4;
+  --color-line: #d8cdb2;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-dim: var(--color-paper-dim);
+  --color-ink: var(--color-ink);
+  --color-teal: var(--color-teal);
+  --color-teal-deep: var(--color-teal-deep);
+  --color-marigold: var(--color-marigold);
+  --color-marigold-soft: var(--color-marigold-soft);
+  --color-road: var(--color-road);
+  --color-mist: var(--color-mist);
+  --color-line: var(--color-line);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-jetbrains);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.route-dash {
+  stroke-dasharray: 6 8;
+}
+
+::selection {
+  background: var(--color-marigold);
+  color: var(--color-teal-deep);
+}
