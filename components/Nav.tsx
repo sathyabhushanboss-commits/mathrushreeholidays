@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 const links = [
   { href: "/", label: "Home" },
   { href: "/packages", label: "Packages" },
-  { href: "/gallery", label: "Gallery" },
+  { href: "/gallery", label: "Fleet" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

@@ -162,6 +162,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== RED & GOLD LUXURY VEHICLES PARAGRAPH ===== */}
+      <section className="px-5 py-10 sm:py-14 bg-gradient-to-r from-red-600 via-red-700 to-red-800">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <div className="text-center">
+              <div className="inline-block mb-4">
+                <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
+              </div>
+              <p className="text-lg sm:text-xl md:text-2xl text-yellow-200 font-medium leading-relaxed max-w-4xl mx-auto">
+                <span className="text-yellow-300 font-bold">All kinds of luxury vehicles</span> 
+                <span className="text-white"> available — from premium sedans and SUVs to spacious tempo travelers and luxury buses. </span>
+                <span className="text-yellow-300 font-bold">24/7 service</span>
+                <span className="text-white"> ensures you get reliable transportation and support whenever you need it, day or night.</span>
+              </p>
+              <div className="mt-4 flex justify-center gap-2">
+                <div className="w-12 h-1 bg-yellow-400/60 rounded-full"></div>
+                <div className="w-12 h-1 bg-yellow-400/30 rounded-full"></div>
+                <div className="w-12 h-1 bg-yellow-400/10 rounded-full"></div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ===== FEATURES SECTION ===== */}
       <section className="px-5 py-16 sm:px-8 sm:py-24 bg-paper">
         <div className="mx-auto max-w-6xl">
