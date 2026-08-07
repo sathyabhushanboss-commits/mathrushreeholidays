@@ -26,9 +26,9 @@ export function Nav() {
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="flex items-center gap-4"
+          className="flex items-center"
         >
-          <div className="relative h-20 w-20 shrink-0">
+          <div className="relative h-40 w-40 shrink-0">
             <Image
               src="/logo/image.png"
               alt="Mathrushree Holidays"
@@ -36,16 +36,6 @@ export function Nav() {
               priority
               className="object-contain"
             />
-          </div>
-
-          <div className="leading-tight">
-            <h1 className="font-display text-3xl font-semibold text-teal">
-              Mathrushree
-            </h1>
-
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-road">
-              Holidays
-            </p>
           </div>
         </Link>
 
