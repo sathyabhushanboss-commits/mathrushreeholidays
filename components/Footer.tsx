@@ -9,10 +9,9 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-display text-xl font-semibold">{site.name}</p>
-            <p className="mt-1 text-sm text-paper/60">{site.kannadaName}</p>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-paper/70">
-              {site.tagline}. Planning South India holidays out of Bengaluru
-              since {site.founded}.
+            <p className="mt-3 text-sm leading-relaxed text-paper/70">
+              South India, mapped by people who've actually driven it. Planning
+              South India holidays out of Bengaluru since {site.founded}.
             </p>
           </div>
 
@@ -22,7 +21,7 @@ export function Footer() {
             </p>
             <ul className="mt-3 space-y-2 text-sm text-paper/80">
               <li><Link href="/packages" className="hover:text-marigold-soft">Packages</Link></li>
-              <li><Link href="/gallery" className="hover:text-marigold-soft">Gallery</Link></li>
+              <li><Link href="/gallery" className="hover:text-marigold-soft">Fleet</Link></li>
               <li><Link href="/about" className="hover:text-marigold-soft">About us</Link></li>
               <li><Link href="/contact" className="hover:text-marigold-soft">Contact</Link></li>
             </ul>
@@ -68,7 +67,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col gap-2 border-t border-paper/15 pt-6 text-xs text-paper/50 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>Bengaluru, Karnataka</p>
+          <p>Designed, Developed and Maintained by Sathya Enterprises</p>
         </div>
       </div>
     </footer>
