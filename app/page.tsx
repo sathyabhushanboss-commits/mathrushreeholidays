@@ -109,6 +109,16 @@ export default function HomePage() {
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [languageIndex, setLanguageIndex] = useState(0);
+
+  // Language toggle every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLanguageIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -126,6 +136,26 @@ export default function HomePage() {
       }
     };
   }, []);
+
+  // Text content in English and Kannada
+  const luxuryText = [
+    // English
+    {
+      main: "All kinds of luxury vehicles available — from premium sedans and SUVs to spacious tempo travelers and luxury buses.",
+      highlight1: "All kinds of luxury vehicles",
+      highlight2: "24/7 service",
+      highlightText: "24/7 service ensures you get reliable transportation and support whenever you need it, day or night."
+    },
+    // Kannada
+    {
+      main: "ಎಲ್ಲಾ ರೀತಿಯ ಐಷಾರಾಮಿ ವಾಹನಗಳು ಲಭ್ಯವಿದೆ — ಪ್ರೀಮಿಯಂ ಸೆಡಾನ್ಗಳು ಮತ್ತು ಎಸ್ಯುವಿಗಳಿಂದ ಹಿಡಿದು ವಿಶಾಲವಾದ ಟೆಂಪೋ ಟ್ರಾವೆಲರ್ಗಳು ಮತ್ತು ಐಷಾರಾಮಿ ಬಸ್ಸುಗಳವರೆಗೆ.",
+      highlight1: "ಎಲ್ಲಾ ರೀತಿಯ ಐಷಾರಾಮಿ ವಾಹನಗಳು",
+      highlight2: "೨೪/೭ ಸೇವೆ",
+      highlightText: "೨೪/೭ ಸೇವೆಯು ನಿಮಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಸಾರಿಗೆ ಮತ್ತು ಬೆಂಬಲವನ್ನು ನೀಡುತ್ತದೆ, ದಿನ ಅಥವಾ ರಾತ್ರಿ ನಿಮಗೆ ಅಗತ್ಯವಿರುವಾಗಲೆಲ್ಲಾ."
+    }
+  ];
+
+  const currentText = luxuryText[languageIndex];
 
   return (
     <>
@@ -170,12 +200,63 @@ export default function HomePage() {
               <div className="inline-block mb-4">
                 <div className="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
               </div>
-              <p className="text-lg sm:text-xl md:text-2xl text-yellow-200 font-medium leading-relaxed max-w-4xl mx-auto">
-                <span className="text-yellow-300 font-bold">All kinds of luxury vehicles</span> 
-                <span className="text-white"> available — from premium sedans and SUVs to spacious tempo travelers and luxury buses. </span>
-                <span className="text-yellow-300 font-bold">24/7 service</span>
-                <span className="text-white"> ensures you get reliable transportation and support whenever you need it, day or night.</span>
-              </p>
+              
+              {/* Language toggle indicator */}
+              <div className="flex justify-center gap-2 mb-4">
+                <span 
+                  className={`text-xs font-medium px-3 py-1 rounded-full transition-all duration-500 ${
+                    languageIndex === 0 
+                      ? 'bg-yellow-400 text-red-700' 
+                      : 'bg-white/20 text-yellow-200'
+                  }`}
+                >
+                  English
+                </span>
+                <span 
+                  className={`text-xs font-medium px-3 py-1 rounded-full transition-all duration-500 ${
+                    languageIndex === 1 
+                      ? 'bg-yellow-400 text-red-700' 
+                      : 'bg-white/20 text-yellow-200'
+                  }`}
+                >
+                  ಕನ್ನಡ
+                </span>
+              </div>
+
+              {/* Animated text with fade transition */}
+              <div className="relative min-h-[120px] sm:min-h-[100px] flex items-center justify-center">
+                <div 
+                  className={`transition-all duration-700 transform ${
+                    languageIndex === 0 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 -translate-y-4 absolute'
+                  }`}
+                >
+                  <p className="text-lg sm:text-xl md:text-2xl text-yellow-200 font-medium leading-relaxed max-w-4xl mx-auto">
+                    <span className="text-yellow-300 font-bold">{currentText.highlight1}</span>
+                    <span className="text-white"> available — from premium sedans and SUVs to spacious tempo travelers and luxury buses. </span>
+                    <span className="text-yellow-300 font-bold">{currentText.highlight2}</span>
+                    <span className="text-white"> ensures you get reliable transportation and support whenever you need it, day or night.</span>
+                  </p>
+                </div>
+                
+                <div 
+                  className={`transition-all duration-700 transform ${
+                    languageIndex === 1 
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-4 absolute'
+                  }`}
+                >
+                  <p className="text-lg sm:text-xl md:text-2xl text-yellow-200 font-medium leading-relaxed max-w-4xl mx-auto">
+                    <span className="text-yellow-300 font-bold">{currentText.highlight1}</span>
+                    <span className="text-white"> ಲಭ್ಯವಿದೆ — ಪ್ರೀಮಿಯಂ ಸೆಡಾನ್ಗಳು ಮತ್ತು ಎಸ್ಯುವಿಗಳಿಂದ ಹಿಡಿದು ವಿಶಾಲವಾದ ಟೆಂಪೋ ಟ್ರಾವೆಲರ್ಗಳು ಮತ್ತು ಐಷಾರಾಮಿ ಬಸ್ಸುಗಳವರೆಗೆ. </span>
+                    <span className="text-yellow-300 font-bold">{currentText.highlight2}</span>
+                    <span className="text-white"> ಸೇವೆಯು ನಿಮಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಸಾರಿಗೆ ಮತ್ತು ಬೆಂಬಲವನ್ನು ನೀಡುತ್ತದೆ, ದಿನ ಅಥವಾ ರಾತ್ರಿ ನಿಮಗೆ ಅಗತ್ಯವಿರುವಾಗಲೆಲ್ಲಾ.</span>
+                  </p>
+                </div>
+              </div>
+
+              {/* Decorative gold lines */}
               <div className="mt-4 flex justify-center gap-2">
                 <div className="w-12 h-1 bg-yellow-400/60 rounded-full"></div>
                 <div className="w-12 h-1 bg-yellow-400/30 rounded-full"></div>
