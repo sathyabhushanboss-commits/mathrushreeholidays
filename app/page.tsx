@@ -371,67 +371,6 @@ export default function HomePage() {
         </Reveal>
       </section>
 
-      {/* ===== FOOTER WITH ADDRESS & PHONE ===== */}
-      <footer className="bg-teal-deep text-white/90">
-        <div className="mx-auto max-w-6xl px-5 py-10 sm:py-12 sm:px-8">
-          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-            {/* Company Info */}
-            <div>
-              <h3 className="font-display text-lg sm:text-xl font-semibold text-white">Mathrushree Holidays</h3>
-              <p className="mt-2 text-xs sm:text-sm text-teal-light/70">
-                Your trusted partner for adventure treks, pilgrimages, and custom tours across India.
-              </p>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="font-display text-base sm:text-lg font-semibold text-white">Contact Us</h4>
-              <div className="mt-3 space-y-2 sm:space-y-3">
-                <a 
-                  href={`tel:${site.phone.replace(/\s/g, '')}`}
-                  className="flex items-center gap-3 text-xs sm:text-sm text-teal-light/80 hover:text-white transition-colors group"
-                >
-                  <Phone size={16} className="group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className="break-all">{site.phone}</span>
-                </a>
-                <a 
-                  href={`mailto:${site.email}`}
-                  className="flex items-center gap-3 text-xs sm:text-sm text-teal-light/80 hover:text-white transition-colors group"
-                >
-                  <Mail size={16} className="group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span className="break-all">{site.email}</span>
-                </a>
-                <a 
-                  href={`https://wa.me/91${site.whatsapp}`}
-                  className="flex items-center gap-3 text-xs sm:text-sm text-teal-light/80 hover:text-white transition-colors group"
-                >
-                  <MessageCircle size={16} className="group-hover:scale-110 transition-transform flex-shrink-0" />
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
-            </div>
-
-            {/* Address */}
-            <div className="sm:col-span-2 lg:col-span-1">
-              <h4 className="font-display text-base sm:text-lg font-semibold text-white">Visit Us</h4>
-              <div className="mt-3 flex items-start gap-3">
-                <MapPin size={16} className="mt-1 flex-shrink-0 text-teal-light" />
-                <p className="text-xs sm:text-sm text-teal-light/80 leading-relaxed">
-                  {site.address}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Bar */}
-          <div className="mt-8 sm:mt-10 border-t border-white/10 pt-6 text-center">
-            <p className="text-xs text-teal-light/60">
-              &copy; {new Date().getFullYear()} Mathrushree Holidays. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-
       {/* ===== FLOATING CONTACT BUTTONS ===== */}
       <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-2 sm:gap-3">
         {/* WhatsApp */}
