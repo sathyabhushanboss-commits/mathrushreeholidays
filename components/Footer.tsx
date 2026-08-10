@@ -97,28 +97,28 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-marigold-soft transition-colors duration-300">
-                  About Us
-                </Link>
-              </li>
-              <li>
                 <Link href="/services" className="hover:text-marigold-soft transition-colors duration-300">
                   Services
                 </Link>
               </li>
               <li>
                 <Link href="/packages" className="hover:text-marigold-soft transition-colors duration-300">
-                  Tour Packages
+                  Packages
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="hover:text-marigold-soft transition-colors duration-300">
+                  Fleet
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-marigold-soft transition-colors duration-300">
+                  About
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-marigold-soft transition-colors duration-300">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="hover:text-marigold-soft transition-colors duration-300">
-                  Blog
+                  Contact
                 </Link>
               </li>
             </ul>
