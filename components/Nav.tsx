@@ -9,6 +9,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
   { href: "/packages", label: "Packages" },
   { href: "/gallery", label: "Fleet" },
   { href: "/about", label: "About" },
@@ -21,22 +22,21 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
           className="flex items-center"
         >
-          <div className="relative h-40 w-40 shrink-0">
-            <Image
-              src="/logo/image.png"
-              alt="Mathrushree Holidays"
-              fill
-              priority
-              className="object-contain"
-            />
-          </div>
+          <Image
+            src="/logo/image.png"
+            alt={site.name}
+            width={180}
+            height={60}
+            className="h-12 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -91,10 +91,10 @@ export function Nav() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className={`block rounded-md px-3 py-3 ${
+                  className={`block rounded-md px-3 py-3 transition ${
                     pathname === link.href
-                      ? "bg-mist text-teal"
-                      : "text-ink/80"
+                      ? "bg-mist text-teal font-semibold"
+                      : "text-ink/80 hover:bg-mist hover:text-teal"
                   }`}
                 >
                   {link.label}
@@ -105,7 +105,7 @@ export function Nav() {
             <li className="mt-4">
               <a
                 href={`tel:${site.phone.replace(/\s/g, "")}`}
-                className="flex items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-white"
+                className="flex items-center justify-center gap-2 rounded-full bg-teal px-5 py-3 text-white transition hover:bg-teal-deep"
               >
                 <Phone size={16} />
                 {site.phoneDisplay}
