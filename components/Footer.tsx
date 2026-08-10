@@ -29,10 +29,10 @@ export function Footer() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 text-center md:text-left">
           
           {/* Company Info Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center md:items-start">
             <Link href="/" className="inline-block mb-6">
               <span className="text-2xl font-bold bg-gradient-to-r from-marigold-soft to-amber-400 bg-clip-text text-transparent">
                 Mathrushree
@@ -40,7 +40,7 @@ export function Footer() {
               <span className="text-2xl font-bold text-white"> Holidays</span>
             </Link>
             
-            <p className="leading-8 text-white/80 text-sm">
+            <p className="leading-relaxed text-white/80 text-sm text-center md:text-left max-w-xs">
               <strong className="text-white">Mathrushree Holidays</strong> is a trusted tours and travels company
               in Bengaluru with <strong className="text-white">21+ years of experience</strong>. We specialize in
               South India tour packages, luxury cab rentals, train ticket booking, flight
@@ -50,8 +50,8 @@ export function Footer() {
               pilgrims, and corporate clients.
             </p>
 
-            {/* Social Media Links */}
-            <div className="mt-8 flex items-center gap-4">
+            {/* Social Media Links - Centered on mobile, left on desktop */}
+            <div className="mt-8 flex items-center gap-4 justify-center md:justify-start">
               <a
                 href="https://www.facebook.com/share/1Bjd4mEDPU/"
                 target="_blank"
@@ -85,12 +85,12 @@ export function Footer() {
           </div>
 
           {/* Quick Links Column */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6 relative">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Quick Links
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
+              <span className="absolute bottom-0 left-1/2 md:left-0 transform -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
             </h3>
-            <ul className="space-y-3 text-white/80">
+            <ul className="space-y-3 text-white/80 text-center md:text-left">
               <li>
                 <Link href="/" className="hover:text-marigold-soft transition-colors duration-300">
                   Home
@@ -125,25 +125,25 @@ export function Footer() {
           </div>
 
           {/* Services Column */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6 relative">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Our Services
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
+              <span className="absolute bottom-0 left-1/2 md:left-0 transform -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
             </h3>
-            <ul className="space-y-3 text-sm text-white/80">
-              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300">
+            <ul className="space-y-3 text-sm text-white/80 text-center md:text-left">
+              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Car size={16} className="text-marigold-soft flex-shrink-0" />
                 Luxury Cab Rentals
               </li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300">
+              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Train size={16} className="text-marigold-soft flex-shrink-0" />
                 Train Ticket Booking
               </li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300">
+              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Plane size={16} className="text-marigold-soft flex-shrink-0" />
                 Flight Ticket Booking
               </li>
-              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300">
+              <li className="flex items-center gap-2 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <ShieldCheck size={16} className="text-marigold-soft flex-shrink-0" />
                 Vehicle Insurance
               </li>
@@ -154,34 +154,34 @@ export function Footer() {
           </div>
 
           {/* Contact Column */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6 relative">
+          <div className="flex flex-col items-center md:items-start">
+            <h3 className="text-lg font-semibold text-white mb-6 relative inline-block">
               Contact Info
-              <span className="absolute bottom-0 left-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
+              <span className="absolute bottom-0 left-1/2 md:left-0 transform -translate-x-1/2 md:translate-x-0 w-12 h-0.5 bg-marigold-soft mt-2"></span>
             </h3>
-            <ul className="space-y-4 text-sm text-white/80">
-              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300">
+            <ul className="space-y-4 text-sm text-white/80 text-center md:text-left">
+              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <MapPin className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
                 <span>Bengaluru, Karnataka, India</span>
               </li>
-              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Phone className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
-                <div className="space-y-1">
-                  <a
-                    href={`tel:${site.phone.replace(/\s/g, "")}`}
-                    className="block hover:text-marigold-soft transition-colors duration-300"
-                  >
-                    {site.phoneDisplay}
-                  </a>
+                <div className="space-y-2">
                   <a
                     href="tel:+919901431975"
                     className="block hover:text-marigold-soft transition-colors duration-300"
                   >
                     +91 99014 31975
                   </a>
+                  <a
+                    href="tel:+919448135975"
+                    className="block hover:text-marigold-soft transition-colors duration-300"
+                  >
+                    +91 94481 35975
+                  </a>
                 </div>
               </li>
-              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Mail className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
                 <a
                   href={`mailto:${site.email}`}
@@ -190,30 +190,19 @@ export function Footer() {
                   {site.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300">
+              <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Clock className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
-                <span>Mon - Sat: 9:00 AM - 8:00 PM</span>
+                <span className="font-medium text-white/90">24/7 Available</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
+        {/* Bottom Bar - Centered with only copyright */}
+        <div className="mt-16 pt-8 border-t border-white/10 flex justify-center items-center text-sm text-white/60 text-center">
           <p>
             &copy; {new Date().getFullYear()} Mathrushree Holidays. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-white transition-colors duration-300">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white transition-colors duration-300">
-              Terms & Conditions
-            </Link>
-            <Link href="/sitemap" className="hover:text-white transition-colors duration-300">
-              Sitemap
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
