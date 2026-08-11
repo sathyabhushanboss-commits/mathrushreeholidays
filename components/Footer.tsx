@@ -184,10 +184,10 @@ export function Footer() {
               <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
                 <Mail className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
                 <a
-                  href={`mailto:${site.email}`}
+                  href="mailto:info@mathrushreeholidays.com"
                   className="hover:text-marigold-soft transition-colors duration-300"
                 >
-                  {site.email}
+                  info@mathrushreeholidays.com
                 </a>
               </li>
               <li className="flex items-start gap-3 hover:text-white transition-colors duration-300 justify-center md:justify-start">
@@ -198,10 +198,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar - Centered with only copyright */}
-        <div className="mt-16 pt-8 border-t border-white/10 flex justify-center items-center text-sm text-white/60 text-center">
+        {/* Bottom Bar - Centered with copyright and credit */}
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col items-center gap-2 text-sm text-white/60 text-center">
           <p>
             &copy; {new Date().getFullYear()} Mathrushree Holidays. All rights reserved.
+          </p>
+          <p className="text-xs text-white/40">
+            Designed, Developed and Maintained by <span className="text-white/60 hover:text-marigold-soft transition-colors duration-300">Sathya Enterprises</span>
           </p>
         </div>
       </div>
