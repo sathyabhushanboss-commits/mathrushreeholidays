@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Reveal, RevealStagger } from "@/components/Reveal";
 import { RouteLine } from "@/components/RouteLine";
-import PostcardStack from "@/components/PostcardStack";
 import ScrollingFleet from "@/components/ScrollingFleet"; 
 import { site } from "@/lib/site";
 import { 
@@ -36,13 +35,6 @@ const principles = [
     title: "Pace over packing",
     body: "We'd rather cut a stop than rush one. Itineraries leave room for the detour, the second cup of coffee, the nap in the car.",
   },
-];
-
-const postcards = [
-  { src: "/images/about/coorg.jpg", alt: "Misty coffee-estate hills in Coorg", caption: "Coorg — 5am, before the mist burns off", rotate: -6, x: 0, y: 10 },
-  { src: "/images/about/kerala.jpg", alt: "Houseboat on the Alleppey backwaters", caption: "Alleppey — the slow route in", rotate: 4, x: 90, y: -18 },
-  { src: "/images/about/hampi.jpg", alt: "Boulder ruins at Hampi at golden hour", caption: "Hampi — last stop before dark", rotate: -3, x: 40, y: 60 },
-  { src: "/images/about/gokarna.jpg", alt: "Empty beach at Gokarna at sunrise", caption: "Gokarna — the one nobody wants to leave", rotate: 8, x: 150, y: 40 },
 ];
 
 // ============================================================
@@ -222,7 +214,7 @@ function ReviewsSection() {
         
         <Reveal className="mt-8 text-center">
           <a
-            href="https://g.page/r/Ce0-I6UtNqK5EBM/review"
+            href="https://share.google/lepVK1KymhmKIA5ip"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-road px-8 py-3.5 font-semibold text-paper transition-all hover:scale-105 hover:shadow-xl animate-pulse-glow"
@@ -304,43 +296,36 @@ export default function About() {
         </div>
       </section>
 
-      {/* ===== POSTCARD STACK + ABOUT TEXT ===== */}
+      {/* ===== ABOUT TEXT SECTION ===== */}
       <section className="overflow-hidden border-b border-line/70 px-5 py-16 sm:px-8 sm:py-24 bg-paper">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="order-2 lg:order-1">
-            <Reveal>
-              <p className="font-mono text-xs uppercase tracking-widest text-road">Who we are</p>
-              <h2 className="mt-3 font-display text-3xl font-medium text-teal sm:text-4xl">
-                Trusted by families for over 21 years
-              </h2>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/75">
-                Mathrushree Holidays started as one family arranging weekend
-                trips for neighbours in Banashankari who didn&apos;t want to
-                deal with unreliable drivers or vague homestay listings. Word
-                spread through the same neighbourhood, then the next one, and
-                today we plan trips for families, couples and offices across
-                Bengaluru — and run a fleet of sedans, SUVs and tempo
-                travelers for anyone who just needs a reliable vehicle and
-                driver, no package required.
-              </p>
-            </Reveal>
-            <Reveal delay={0.18}>
-              <RouteLine
-                className="mt-12 h-16 w-full max-w-md"
-                viewBox="0 0 600 60"
-                path="M 10 40 C 100 10, 200 55, 300 25 S 500 10, 590 35"
-                dots={[{ cx: 10, cy: 40 }, { cx: 300, cy: 25 }, { cx: 590, cy: 35 }]}
-                strokeWidth={2}
-              />
-            </Reveal>
-          </div>
-
-          {/* Postcard stack (Client Component) */}
-          <div className="order-1 lg:order-2">
-            <PostcardStack postcards={postcards} />
-          </div>
+        <div className="mx-auto max-w-4xl">
+          <Reveal>
+            <p className="font-mono text-xs uppercase tracking-widest text-road">Who we are</p>
+            <h2 className="mt-3 font-display text-3xl font-medium text-teal sm:text-4xl">
+              Trusted by families for over 21 years
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-6 text-lg leading-relaxed text-ink/75">
+              Mathrushree Holidays started as one family arranging weekend
+              trips for neighbours in Banashankari who didn&apos;t want to
+              deal with unreliable drivers or vague homestay listings. Word
+              spread through the same neighbourhood, then the next one, and
+              today we plan trips for families, couples and offices across
+              Bengaluru — and run a fleet of sedans, SUVs and tempo
+              travelers for anyone who just needs a reliable vehicle and
+              driver, no package required.
+            </p>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <RouteLine
+              className="mt-12 h-16 w-full max-w-md"
+              viewBox="0 0 600 60"
+              path="M 10 40 C 100 10, 200 55, 300 25 S 500 10, 590 35"
+              dots={[{ cx: 10, cy: 40 }, { cx: 300, cy: 25 }, { cx: 590, cy: 35 }]}
+              strokeWidth={2}
+            />
+          </Reveal>
         </div>
       </section>
 

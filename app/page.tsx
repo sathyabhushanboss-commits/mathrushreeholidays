@@ -1,6 +1,6 @@
 'use client';
 
-import { MessageCircle, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { MessageCircle, ArrowRight, MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode, useRef, useState, useEffect } from 'react';
@@ -98,6 +98,19 @@ const features: Feature[] = [
   }
 ];
 
+const galleryImages = [
+  { src: "/logo/1.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/2.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/3.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/4.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/5.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/6.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/7.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/8.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/9.jpeg", alt: "Mathrushree Holidays" },
+  { src: "/logo/10.jpeg", alt: "Mathrushree Holidays" }
+];
+
 // ============ MAIN COMPONENT ============
 export default function HomePage() {
   const site: Site = {
@@ -157,8 +170,42 @@ export default function HomePage() {
 
   const currentText = luxuryText[languageIndex];
 
+  // Split images into two rows for marquee
+  const firstRowImages = galleryImages.slice(0, 5);
+  const secondRowImages = galleryImages.slice(5, 10);
+
+  // Create marquee items with only English and Kannada
+  const marqueeItems = [
+    { name: "Mathrushree Holidays", lang: "English" },
+    { name: "ಮಾತೃಶ್ರೀ ಹಾಲಿಡೇಸ್", lang: "Kannada" },
+    { name: "Mathrushree Holidays", lang: "English" },
+    { name: "ಮಾತೃಶ್ರೀ ಹಾಲಿಡೇಸ್", lang: "Kannada" },
+    { name: "Mathrushree Holidays", lang: "English" },
+    { name: "ಮಾತೃಶ್ರೀ ಹಾಲಿಡೇಸ್", lang: "Kannada" },
+  ];
+
   return (
     <>
+      {/* ===== MARQUEE TAPE ===== */}
+      <div className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 py-2 overflow-hidden border-y-2 border-yellow-400/30">
+        <div className="relative flex overflow-x-hidden">
+          <div className="animate-marquee whitespace-nowrap flex items-center gap-12">
+            {marqueeItems.map((item, index) => (
+              <span key={index} className={`font-bold text-sm sm:text-base md:text-lg tracking-wider ${index % 2 === 0 ? 'text-yellow-300' : 'text-white'}`}>
+                ✦ {item.name} ✦
+              </span>
+            ))}
+          </div>
+          <div className="animate-marquee2 whitespace-nowrap flex items-center gap-12 absolute top-0 left-0">
+            {marqueeItems.map((item, index) => (
+              <span key={index} className={`font-bold text-sm sm:text-base md:text-lg tracking-wider ${index % 2 === 0 ? 'text-yellow-300' : 'text-white'}`}>
+                ✦ {item.name} ✦
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* ===== HERO SECTION WITH FULL VIDEO BACKGROUND ===== */}
       <section className="relative w-full overflow-hidden bg-teal-deep">
         {/* Video Container with correct aspect ratio */}
@@ -188,6 +235,90 @@ export default function HomePage() {
         <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
           <div className="h-12 w-6 rounded-full border-2 border-white/60 flex items-start justify-center p-1 animate-bounce">
             <div className="h-2 w-1.5 rounded-full bg-white/60 animate-pulse" />
+          </div>
+        </div>
+      </section>
+
+      {/* ===== GALLERY MARQUEE SECTION - Desktop Only ===== */}
+      <section className="hidden md:block px-5 py-16 sm:px-8 sm:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div className="mx-auto max-w-7xl">
+          <Reveal>
+            <div className="text-center mb-12">
+              <p className="font-mono text-xs uppercase tracking-widest text-teal/70">Our Gallery</p>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-medium text-teal-deep">
+                Explore Our Beautiful Destinations
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+          </Reveal>
+
+          {/* First Row - Scrolling Left */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee-gallery">
+              {firstRowImages.concat(firstRowImages).map((image, index) => (
+                <div key={index} className="flex-shrink-0 w-72 h-72 mx-3 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white p-2">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Second Row - Scrolling Right */}
+          <div className="relative overflow-hidden mt-4">
+            <div className="flex animate-marquee-gallery-reverse">
+              {secondRowImages.concat(secondRowImages).map((image, index) => (
+                <div key={index} className="flex-shrink-0 w-72 h-72 mx-3 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white p-2">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== GALLERY GRID SECTION - Mobile Only ===== */}
+      <section className="md:hidden px-5 py-16 sm:px-8 sm:py-20 bg-gradient-to-b from-white to-gray-50">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <div className="text-center mb-12">
+              <p className="font-mono text-xs uppercase tracking-widest text-teal/70">Our Gallery</p>
+              <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-medium text-teal-deep">
+                Explore Our Beautiful Destinations
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+          </Reveal>
+
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            {galleryImages.map((image, index) => (
+              <Reveal key={index}>
+                <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white p-2">
+                  <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-contain transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 50vw"
+                    />
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -342,6 +473,48 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== FLEET / GALLERY SECTION ===== */}
+      <section className="px-5 py-16 sm:px-8 sm:py-24 bg-gradient-to-b from-paper to-white">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Left Content */}
+            <Reveal>
+              <div>
+                <p className="font-mono text-xs uppercase tracking-widest text-teal/70">Our Fleet</p>
+                <h2 className="mt-3 font-display text-2xl sm:text-3xl md:text-4xl font-medium text-teal-deep">
+                  Premium Vehicles for Every Journey
+                </h2>
+                <p className="mt-4 text-ink/70 leading-relaxed">
+                  Explore our extensive fleet of luxury vehicles designed to make your travel comfortable and memorable.
+                </p>
+                <div className="mt-8">
+                  <Link
+                    href="/gallery"
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full hover:from-red-700 hover:to-red-800 transition-all duration-300 hover:gap-3 shadow-lg hover:shadow-xl font-medium"
+                  >
+                    Explore Our Fleet <ChevronRight size={18} />
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Right Image - Full Display */}
+            <Reveal>
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 bg-white p-4">
+                <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+                  <Image
+                    src="/logo/1.jpeg"
+                    alt="Mathrushree Holidays Fleet"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA SECTION ===== */}
       <section className="px-5 py-16 sm:px-8 sm:py-24 bg-gradient-to-b from-paper to-white">
         <Reveal className="mx-auto max-w-4xl rounded-2xl sm:rounded-3xl bg-teal-deep px-6 sm:px-8 md:px-16 py-10 sm:py-14 text-center text-white shadow-2xl hover:shadow-3xl transition-shadow duration-500">
@@ -444,6 +617,60 @@ export default function HomePage() {
           
           .animate-bounce {
             animation: bounce 1.5s infinite;
+          }
+
+          /* ===== MARQUEE ANIMATIONS ===== */
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          @keyframes marquee2 {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+          
+          .animate-marquee2 {
+            animation: marquee2 20s linear infinite;
+          }
+
+          /* ===== GALLERY MARQUEE ANIMATIONS ===== */
+          @keyframes marquee-gallery {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          @keyframes marquee-gallery-reverse {
+            0% {
+              transform: translateX(-50%);
+            }
+            100% {
+              transform: translateX(0);
+            }
+          }
+          
+          .animate-marquee-gallery {
+            animation: marquee-gallery 30s linear infinite;
+          }
+          
+          .animate-marquee-gallery-reverse {
+            animation: marquee-gallery-reverse 30s linear infinite;
           }
 
           /* ===== CUSTOM COLOR OVERRIDES ===== */
