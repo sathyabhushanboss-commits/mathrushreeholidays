@@ -22,21 +22,35 @@ export function Nav() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-paper/95 backdrop-blur">
-      <div className="container flex h-20 items-center justify-between">
-        {/* Logo */}
+      <div className="container flex h-32 md:h-32 items-center justify-between">
+        {/* Logo - Left side */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
-          className="flex items-center"
+          className="flex items-center flex-shrink-0"
         >
-          <Image
-            src="/logo/image.png"
-            alt={site.name}
-            width={180}
-            height={60}
-            className="h-12 w-auto"
-            priority
-          />
+          {/* Desktop logo - 550% larger */}
+          <div className="hidden md:block">
+            <Image
+              src="/logo/image.png"
+              alt={site.name}
+              width={990}
+              height={330}
+              className="h-36 w-auto"
+              priority
+            />
+          </div>
+          {/* Mobile logo - 400% larger */}
+          <div className="md:hidden">
+            <Image
+              src="/logo/image.png"
+              alt={site.name}
+              width={720}
+              height={240}
+              className="h-16 w-auto"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -72,10 +86,36 @@ export function Nav() {
           </a>
         </nav>
 
+        {/* Right side logo - Desktop and Mobile */}
+        <div className="flex items-center flex-shrink-0">
+          {/* Desktop right logo - 600% larger */}
+          <div className="hidden md:block">
+            <Image
+              src="/logo/kar.jpeg"
+              alt="Karnataka Tourism"
+              width={360}
+              height={360}
+              className="h-20 w-auto rounded-full"
+              priority
+            />
+          </div>
+          {/* Mobile right logo - 400% larger */}
+          <div className="md:hidden">
+            <Image
+              src="/logo/kar.jpeg"
+              alt="Karnataka Tourism"
+              width={240}
+              height={240}
+              className="h-16 w-auto rounded-full"
+              priority
+            />
+          </div>
+        </div>
+
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="rounded-md p-2 text-teal md:hidden"
+          className="rounded-md p-2 text-teal md:hidden ml-2"
           aria-label="Toggle Menu"
         >
           {open ? <X size={26} /> : <Menu size={26} />}
