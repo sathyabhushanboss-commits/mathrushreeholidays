@@ -379,23 +379,6 @@ export default function About() {
       {/* ===== REVIEWS SECTION ===== */}
       <ReviewsSection />
 
-      {/* ===== ADDRESS + PHONE ===== */}
-      <section className="border-t border-line/70 px-5 py-12 sm:px-8 bg-white">
-        <div className="mx-auto flex max-w-4xl flex-col gap-3 text-sm text-ink/70 sm:flex-row sm:items-center sm:justify-center sm:gap-8">
-          <div className="flex items-center gap-2">
-            <MapPin size={16} className="text-road animate-bounce-hover" />
-            <span>
-              43, Muneshwara Temple Street, Mookambika Nagar, Hosakerehalli,
-              Banashankari 3rd Stage, Bengaluru, Karnataka 560085
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Phone size={16} className="text-road animate-pulse-glow" />
-            <a href="tel:+919480399555" className="hover:text-teal transition-colors">+91 94803 99555</a>
-          </div>
-        </div>
-      </section>
-
       {/* ===== CTA SECTION ===== */}
       <section className="border-t border-line/70 bg-gradient-to-br from-teal-deep to-teal px-5 py-16 sm:px-8 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -419,7 +402,7 @@ export default function About() {
                 <MessageCircle className="h-5 w-5" /> Chat on WhatsApp
               </a>
               <a
-                href={`tel:${site.phone}`}
+                href={`tel:+91${site.phone.replace(/\s/g, '').replace(/^0/, '')}`}
                 className="inline-flex items-center gap-2 rounded-full border-2 border-white/60 px-8 py-3.5 font-semibold text-white transition-all hover:bg-white hover:text-teal-deep animate-slide-right"
               >
                 <Phone className="h-5 w-5" /> Call {site.phoneDisplay}
