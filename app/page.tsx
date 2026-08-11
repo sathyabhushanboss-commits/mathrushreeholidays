@@ -574,7 +574,7 @@ export default function HomePage() {
 
         {/* Email */}
         <a
-          href={`mailto:${site.email}`}
+          href="mailto:info@mathrushreeholidays.com"
           className="group flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white p-2.5 sm:p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
           aria-label="Email us"
         >
