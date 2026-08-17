@@ -168,16 +168,16 @@ export function Footer() {
                 <Phone className="mt-1 h-5 w-5 text-marigold-soft flex-shrink-0" />
                 <div className="space-y-2">
                   <a
+                    href="tel:+919480399555"
+                    className="block hover:text-marigold-soft transition-colors duration-300"
+                  >
+                    +91 94803 99555
+                  </a>
+                  <a
                     href="tel:+919901431975"
                     className="block hover:text-marigold-soft transition-colors duration-300"
                   >
-                    +91 99014 31975
-                  </a>
-                  <a
-                    href="tel:+919448135975"
-                    className="block hover:text-marigold-soft transition-colors duration-300"
-                  >
-                    +91 94481 35975
+                    +91 999014 31975
                   </a>
                 </div>
               </li>
