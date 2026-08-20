@@ -10,14 +10,14 @@ import {
 // ============ SEO METADATA ============
 export const metadata: Metadata = {
   title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-  description: "Explore our fleet of 13 premium AC and Non-AC vehicles for rent in Bangalore. Book Tempo Travellers, Urbania, SUVs, Luxury Cars for local & outstation tours.",
-  keywords: "vehicle fleet Bangalore, Tempo Traveller rental, Urbania rental, luxury car rental, outstation vehicles, Mathrushree Holidays, car rental Bangalore",
+  description: "Explore our fleet of 17 premium AC and Non-AC vehicles for rent in Bangalore. Book Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses.",
+  keywords: "vehicle fleet Bangalore, Tempo Traveller rental, Urbania rental, luxury car rental, bus rental, outstation vehicles, Mathrushree Holidays",
   alternates: {
     canonical: "/fleet",
   },
   openGraph: {
     title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-    description: "Choose from 13 premium vehicles including Tempo Travellers, Urbania, SUVs, Luxury Cars for your trips. Book now for the best rates.",
+    description: "Choose from 17 premium vehicles including Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses. Book now for the best rates.",
     type: "website",
     url: "https://mathrushreeholidays.com/fleet",
     siteName: "Mathrushree Holidays",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-    description: "Explore our fleet of 13 premium vehicles for rent in Bangalore. Book now!",
+    description: "Explore our fleet of 17 premium vehicles for rent in Bangalore. Book now!",
     images: ["https://mathrushreeholidays.com/og-fleet.jpg"],
     site: "@mathrushree",
     creator: "@mathrushree",
@@ -77,7 +77,7 @@ const site = {
   url: "https://mathrushreeholidays.com",
 };
 
-// FLEET DATA - Force Traveller and Mini Bus removed
+// FLEET DATA - All vehicles with buses added at the end
 const fleetData = [
   // ===== TEMPO TRAVELLERS (All together) =====
   { 
@@ -270,6 +270,108 @@ const fleetData = [
     vehicleType: "SUV",
     order: 13
   },
+  
+  // ===== SUV & SEDAN =====
+  { 
+    id: "14", 
+    title: "SUV - 6 Seater", 
+    description: "Perfect for small families and adventure trips to hilly terrains. High ground clearance and powerful engine for all roads.",
+    image: "/vehicle/SUV-6Seater.png",
+    features: ["High Clearance", "Powerful Engine", "Adventure"],
+    bgColor: "from-green-50 to-emerald-50",
+    seoTitle: "6 Seater SUV Rental Bangalore",
+    seoDesc: "Rent 6 seater SUV for adventure trips and family outings. High ground clearance with powerful engine.",
+    category: "SUV",
+    capacity: "6 Seater",
+    vehicleType: "SUV",
+    order: 14
+  },
+  { 
+    id: "15", 
+    title: "Sedan - 4 Seater", 
+    description: "Elegant and comfortable for executive travel and couples. Smooth, silent ride with premium upholstery and climate control.",
+    image: "/vehicle/Sedan-4Seater.png",
+    features: ["Elegant", "Silent Ride", "Climate Control"],
+    bgColor: "from-rose-50 to-pink-50",
+    seoTitle: "4 Seater Sedan Rental Bangalore",
+    seoDesc: "Book luxury sedan for executive travel and couples. Premium 4 seater with climate control and smooth ride.",
+    category: "Sedan",
+    capacity: "4 Seater",
+    vehicleType: "Sedan",
+    order: 15
+  },
+  { 
+    id: "16", 
+    title: "Scorpio - 7 Seater", 
+    description: "Premium SUV with powerful engine, ideal for family road trips. AC with modern entertainment features and comfortable seating.",
+    image: "/vehicle/Scorpio-7Seater.png",
+    features: ["Premium SUV", "Powerful", "Entertainment"],
+    bgColor: "from-stone-50 to-neutral-50",
+    seoTitle: "Scorpio 7 Seater Rental Bangalore",
+    seoDesc: "Book Scorpio 7 seater for family road trips. Premium SUV with powerful engine and entertainment features.",
+    category: "SUV",
+    capacity: "7 Seater",
+    vehicleType: "SUV",
+    order: 16
+  },
+  
+  // ===== BUSES (All together at the end) =====
+  { 
+    id: "17", 
+    title: "Mini Bus - 18 Seater", 
+    description: "Compact and maneuverable for city tours and short trips. AC vehicle with professional driver and comfortable seating.",
+    image: "/vehicle/MiniBus-18Seater.png",
+    features: ["Compact", "Maneuverable", "Expert Driver"],
+    bgColor: "from-violet-50 to-purple-50",
+    seoTitle: "18 Seater Mini Bus Rental Bangalore",
+    seoDesc: "Rent 18 seater mini bus for city tours and corporate events. Compact AC bus with professional driver.",
+    category: "Bus",
+    capacity: "18 Seater",
+    vehicleType: "Bus",
+    order: 17
+  },
+  { 
+    id: "18", 
+    title: "Luxury Bus - 20 Seater", 
+    description: "Premium coach with recliner seats, entertainment system, and AC. Perfect for corporate groups and destination weddings.",
+    image: "/vehicle/LuxuryBus-20Seater.png",
+    features: ["Recliners", "Entertainment", "AC"],
+    bgColor: "from-rose-50 to-red-50",
+    seoTitle: "20 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Book 20 seater luxury bus for corporate groups and weddings. Premium coach with recliner seats and entertainment.",
+    category: "Bus",
+    capacity: "20 Seater",
+    vehicleType: "Bus",
+    order: 18
+  },
+  { 
+    id: "19", 
+    title: "Luxury Bus - 25 Seater", 
+    description: "Spacious coach perfect for school trips, corporate events, and large family outings. AC with music and entertainment.",
+    image: "/vehicle/LuxuryBus-25Seater.png",
+    features: ["Spacious", "Music System", "AC"],
+    bgColor: "from-orange-50 to-amber-50",
+    seoTitle: "25 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Rent 25 seater luxury bus for school trips and corporate events. Spacious AC coach with music system.",
+    category: "Bus",
+    capacity: "25 Seater",
+    vehicleType: "Bus",
+    order: 19
+  },
+  { 
+    id: "20", 
+    title: "Luxury Bus - 32 Seater", 
+    description: "Large capacity coach with AC, music system, and comfortable seats. Ideal for large tour groups and corporate travel.",
+    image: "/vehicle/LuxuryBus-32Seater.png",
+    features: ["Large Capacity", "Comfortable Seats", "AC"],
+    bgColor: "from-blue-50 to-indigo-50",
+    seoTitle: "32 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Book 32 seater luxury bus for large tour groups. Premium coach with AC, music, and comfortable seating.",
+    category: "Bus",
+    capacity: "32 Seater",
+    vehicleType: "Bus",
+    order: 20
+  },
 ];
 
 // ============ COMPONENTS ============
@@ -333,7 +435,7 @@ function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "Mathrushree Holidays",
-    "description": "Premium vehicle rental and tour operator in Bangalore offering Tempo Travellers, Urbania, SUVs, and Luxury Cars for local and outstation travel.",
+    "description": "Premium vehicle rental and tour operator in Bangalore offering Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses for local and outstation travel.",
     "url": site.url,
     "telephone": `+91${site.whatsapp}`,
     "email": site.email,
@@ -419,7 +521,7 @@ export default function Fleet() {
               Vehicles for Every Journey
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:text-xl animate-fade-in-delay">
-              From luxury SUVs to spacious vans — we have 13 premium vehicles for your trip.
+              From luxury SUVs to spacious buses — we have 20 premium vehicles for your trip.
               All well-maintained with professional drivers and insurance.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -460,7 +562,7 @@ export default function Fleet() {
           <Reveal>
             <div className="flex items-center gap-2 text-teal-600">
               <Bus className="h-5 w-5 animate-bounce-hover" />
-              <span className="font-mono text-xs uppercase tracking-widest text-teal-700 animate-pulse-glow">13 Premium Vehicles</span>
+              <span className="font-mono text-xs uppercase tracking-widest text-teal-700 animate-pulse-glow">20 Premium Vehicles</span>
             </div>
             <h2 className="mt-2 font-display text-3xl font-bold text-teal-800 sm:text-4xl animate-slide-up">
               Explore Our Fleet
