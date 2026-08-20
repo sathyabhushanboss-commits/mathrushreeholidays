@@ -10,14 +10,14 @@ import {
 // ============ SEO METADATA ============
 export const metadata: Metadata = {
   title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-  description: "Explore our fleet of 17 premium AC and Non-AC vehicles for rent in Bangalore. Book Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses.",
+  description: "Explore our fleet of 22 premium AC and Non-AC vehicles for rent in Bangalore. Book Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses.",
   keywords: "vehicle fleet Bangalore, Tempo Traveller rental, Urbania rental, luxury car rental, bus rental, outstation vehicles, Mathrushree Holidays",
   alternates: {
     canonical: "/fleet",
   },
   openGraph: {
     title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-    description: "Choose from 17 premium vehicles including Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses. Book now for the best rates.",
+    description: "Choose from 22 premium vehicles including Tempo Travellers, Urbania, SUVs, Luxury Cars, and Buses. Book now for the best rates.",
     type: "website",
     url: "https://mathrushreeholidays.com/fleet",
     siteName: "Mathrushree Holidays",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Fleet of Premium Vehicles for Rent | Mathrushree Holidays",
-    description: "Explore our fleet of 17 premium vehicles for rent in Bangalore. Book now!",
+    description: "Explore our fleet of 22 premium vehicles for rent in Bangalore. Book now!",
     images: ["https://mathrushreeholidays.com/og-fleet.jpg"],
     site: "@mathrushree",
     creator: "@mathrushree",
@@ -77,7 +77,7 @@ const site = {
   url: "https://mathrushreeholidays.com",
 };
 
-// FLEET DATA - All vehicles with buses added at the end
+// FLEET DATA - All vehicles with updated buses
 const fleetData = [
   // ===== TEMPO TRAVELLERS (All together) =====
   { 
@@ -318,20 +318,6 @@ const fleetData = [
   // ===== BUSES (All together at the end) =====
   { 
     id: "17", 
-    title: "Mini Bus - 18 Seater", 
-    description: "Compact and maneuverable for city tours and short trips. AC vehicle with professional driver and comfortable seating.",
-    image: "/vehicle/MiniBus-18Seater.png",
-    features: ["Compact", "Maneuverable", "Expert Driver"],
-    bgColor: "from-violet-50 to-purple-50",
-    seoTitle: "18 Seater Mini Bus Rental Bangalore",
-    seoDesc: "Rent 18 seater mini bus for city tours and corporate events. Compact AC bus with professional driver.",
-    category: "Bus",
-    capacity: "18 Seater",
-    vehicleType: "Bus",
-    order: 17
-  },
-  { 
-    id: "18", 
     title: "Luxury Bus - 20 Seater", 
     description: "Premium coach with recliner seats, entertainment system, and AC. Perfect for corporate groups and destination weddings.",
     image: "/vehicle/LuxuryBus-20Seater.png",
@@ -342,6 +328,20 @@ const fleetData = [
     category: "Bus",
     capacity: "20 Seater",
     vehicleType: "Bus",
+    order: 17
+  },
+  { 
+    id: "18", 
+    title: "Luxury Bus - 21 Seater", 
+    description: "Spacious and comfortable coach perfect for medium-sized groups. AC with music system and comfortable seating for all passengers.",
+    image: "/vehicle/bus_21_seater.png",
+    features: ["Spacious", "Music System", "AC"],
+    bgColor: "from-orange-50 to-amber-50",
+    seoTitle: "21 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Book 21 seater luxury bus for group travel. Spacious AC coach with music system and comfortable seating.",
+    category: "Bus",
+    capacity: "21 Seater",
+    vehicleType: "Bus",
     order: 18
   },
   { 
@@ -350,7 +350,7 @@ const fleetData = [
     description: "Spacious coach perfect for school trips, corporate events, and large family outings. AC with music and entertainment.",
     image: "/vehicle/LuxuryBus-25Seater.png",
     features: ["Spacious", "Music System", "AC"],
-    bgColor: "from-orange-50 to-amber-50",
+    bgColor: "from-yellow-50 to-amber-50",
     seoTitle: "25 Seater Luxury Bus Rental Bangalore",
     seoDesc: "Rent 25 seater luxury bus for school trips and corporate events. Spacious AC coach with music system.",
     category: "Bus",
@@ -360,17 +360,45 @@ const fleetData = [
   },
   { 
     id: "20", 
-    title: "Luxury Bus - 32 Seater", 
+    title: "Luxury Bus - 33 Seater", 
     description: "Large capacity coach with AC, music system, and comfortable seats. Ideal for large tour groups and corporate travel.",
     image: "/vehicle/LuxuryBus-32Seater.png",
     features: ["Large Capacity", "Comfortable Seats", "AC"],
     bgColor: "from-blue-50 to-indigo-50",
-    seoTitle: "32 Seater Luxury Bus Rental Bangalore",
-    seoDesc: "Book 32 seater luxury bus for large tour groups. Premium coach with AC, music, and comfortable seating.",
+    seoTitle: "33 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Book 33 seater luxury bus for large tour groups. Premium coach with AC, music, and comfortable seating.",
     category: "Bus",
-    capacity: "32 Seater",
+    capacity: "33 Seater",
     vehicleType: "Bus",
     order: 20
+  },
+  { 
+    id: "21", 
+    title: "Luxury Bus - 40 Seater", 
+    description: "Premium large capacity coach with AC, entertainment system, and recliner seats. Perfect for large corporate events and destination weddings.",
+    image: "/vehicle/bus_40_seater.png",
+    features: ["Premium", "Entertainment", "Recliners"],
+    bgColor: "from-purple-50 to-violet-50",
+    seoTitle: "40 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Rent 40 seater luxury bus for large events and corporate travel. Premium AC coach with entertainment system.",
+    category: "Bus",
+    capacity: "40 Seater",
+    vehicleType: "Bus",
+    order: 21
+  },
+  { 
+    id: "22", 
+    title: "Luxury Bus - 50 Seater", 
+    description: "Maximum capacity premium coach with AC, entertainment, and comfortable recliner seats. Ideal for mega events, tours, and large group travel.",
+    image: "/vehicle/bus_50_seater.png",
+    features: ["Max Capacity", "Premium", "Recliners"],
+    bgColor: "from-indigo-50 to-purple-50",
+    seoTitle: "50 Seater Luxury Bus Rental Bangalore",
+    seoDesc: "Book 50 seater luxury bus for mega events and large group travel. Premium AC coach with entertainment and recliners.",
+    category: "Bus",
+    capacity: "50 Seater",
+    vehicleType: "Bus",
+    order: 22
   },
 ];
 
@@ -521,7 +549,7 @@ export default function Fleet() {
               Vehicles for Every Journey
             </h1>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:text-xl animate-fade-in-delay">
-              From luxury SUVs to spacious buses — we have 20 premium vehicles for your trip.
+              From luxury SUVs to spacious buses — we have 22 premium vehicles for your trip.
               All well-maintained with professional drivers and insurance.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -562,7 +590,7 @@ export default function Fleet() {
           <Reveal>
             <div className="flex items-center gap-2 text-teal-600">
               <Bus className="h-5 w-5 animate-bounce-hover" />
-              <span className="font-mono text-xs uppercase tracking-widest text-teal-700 animate-pulse-glow">20 Premium Vehicles</span>
+              <span className="font-mono text-xs uppercase tracking-widest text-teal-700 animate-pulse-glow">22 Premium Vehicles</span>
             </div>
             <h2 className="mt-2 font-display text-3xl font-bold text-teal-800 sm:text-4xl animate-slide-up">
               Explore Our Fleet
