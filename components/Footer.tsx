@@ -177,7 +177,7 @@ export function Footer() {
                     href="tel:+919901431975"
                     className="block hover:text-marigold-soft transition-colors duration-300"
                   >
-                    +91 999014 31975
+                    +91 99014 31975
                   </a>
                 </div>
               </li>
